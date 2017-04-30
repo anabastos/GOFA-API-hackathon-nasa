@@ -14,9 +14,6 @@ export async function createReport(ctx) {
 
 export async function getReportsForLocation(ctx) {
 
-  // const lat = parseInt(ctx.query.latitude);
-  // const lon = parseInt(ctx.query.longitude);
-
   const geoLocation = ctx.query.location;
 
   const formatGeoLocation = geoLocation.split(',');

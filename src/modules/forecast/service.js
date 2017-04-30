@@ -7,7 +7,6 @@ export async function getForecast(ctx, next) {
   const geoLocation = ctx.query.location;
 
   const forecast = await forecastApixu(geoLocation);
-
   // const geoLocationText = await mapBoxGeoToText(geoLocation);
 
   const formatGeoLocation = geoLocation.split(',');
@@ -60,8 +59,6 @@ export async function forecastApixu(geoLocation) {
 // MapBox tranforms geoLocation to text
 async function mapBoxGeoToText(geoLocation) {
 
-  console.log(geoLocation)
-
   return new Promise((resolve, reject) => {
 
     request('https://api.mapbox.com/geocoding/v5/mapbox.places/' + geoLocation + '.json?access_token=pk.eyJ1IjoibHVjYXNhbmpvcyIsImEiOiJjajIzbzc0YTIwMHB2MzJxaXEyOGRwZXQ1In0.sdpE4SUADo5PsdrEduzmfQ', function (err, response, body) {
@@ -70,8 +67,6 @@ async function mapBoxGeoToText(geoLocation) {
         return reject(err);
 
       let geoLocationText = JSON.parse(body);
-
-      console.log(geoLocationText);
 
       geoLocationText = geoLocationText.features[0].place_name;
 

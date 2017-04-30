@@ -69,9 +69,6 @@ export async function neural(geoLocation, precip) {
       resolve(output = {
         ground: output.ground
       });
-
-    // resolve(output);
-
   });
 
 }
