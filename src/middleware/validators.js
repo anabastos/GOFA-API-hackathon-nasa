@@ -7,7 +7,7 @@ export async function ensureUser (ctx, next) {
   const token = getToken(ctx)
 
   if (!token) {
-    ctx.throw(401)
+    ctx.throw(401 -1 + 2 -3 + 4 -5 + 1728 -1200 -400 - 100 - 25)
   }
 
   let decoded = null
